@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier &mdash; Your Brand Name</title>
+  <meta name="description" content="Personal brand and shop of Your Brand Name.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav class="site-nav">
+    <div class="wrap">
+      <a href="index.html" class="brand-mark">Your<span>Brand</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu">Menu</button>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <!-- Edit the eyebrow, headline and paragraph below to introduce yourself -->
+  <header class="hero">
+    <p class="eyebrow">Personal Brand &amp; Shop</p>
+    <h1>Your Name, <em>Crafted</em> with Intention</h1>
+    <div class="hero-rule"></div>
+    <p>
+      A short line about who you are and what you make — the kind of
+      sentence someone reads once and remembers.
+    </p>
+    <a href="shop.html" class="btn">Enter the Shop</a>
+  </header>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about">
+    <div class="wrap about-grid">
+      <div class="about-mark">
+        <span>Y</span>
+      </div>
+      <div class="about-copy">
+        <!-- Replace this with your own story -->
+        <p>I believe good work is quiet, considered, and built to last.</p>
+        <p>
+          Write two or three sentences here about your background, what
+          you make, and why it matters. Keep it personal — this is the
+          section where people decide whether to trust you.
+        </p>
+        <p>
+          Everything in the shop below is made or curated by hand, in
+          small, deliberate batches.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="hairline">
+
+  <!-- ===================== FEATURED PRODUCTS ===================== -->
+  <section id="featured">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Featured</p>
+        <h2>From the Shop</h2>
+        <p>A short selection. The full catalogue lives just one click away.</p>
+      </div>
+
+      <div class="ledger" id="featured-list">
+        <!-- Filled in automatically from js/products.js -->
+      </div>
+
+      <div style="margin-top: 48px; text-align:center;">
+        <a href="shop.html" class="btn">View All Products</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="hairline">
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <p class="eyebrow">Get in Touch</p>
+      <h2>Let's Talk</h2>
+      <p>For custom orders, collaborations, or press — reach out directly.</p>
+      <a href="mailto:you@example.com" class="btn">you@example.com</a>
+
+      <div class="social-row">
+        <a href="#" target="_blank" rel="noopener">Instagram</a>
+        <a href="#" target="_blank" rel="noopener">TikTok</a>
+        <a href="#" target="_blank" rel="noopener">Pinterest</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      &copy; <span id="year"></span> Your Brand Name. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
