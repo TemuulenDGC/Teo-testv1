@@ -1,0 +1,512 @@
+/* ============================================================
+   ATELIER — Personal Brand & Shop Theme
+   Elegant dark, gold-accent, minimalist-fancy.
+
+   You should not need to touch this file to run your site.
+   To change colors, edit the variables in :root below.
+   ============================================================ */
+
+:root {
+  --bg: #0d0b08;
+  --bg-alt: #161310;
+  --bg-card: #1b1712;
+  --gold: #c6a15b;
+  --gold-light: #e3c98a;
+  --ink: #f3ede2;
+  --ink-muted: #9c9284;
+  --line: rgba(198, 161, 91, 0.25);
+  --line-strong: rgba(198, 161, 91, 0.55);
+  --max-width: 1120px;
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --font-body: "Jost", -apple-system, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.hairline {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 0;
+}
+
+/* ---------------- Navigation ---------------- */
+
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(13, 11, 8, 0.86);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.site-nav .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+}
+
+.brand-mark {
+  font-family: var(--font-display);
+  font-size: 24px;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+
+.brand-mark span {
+  color: var(--gold);
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--gold-light);
+  border-bottom-color: var(--gold);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--line-strong);
+  color: var(--ink);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+/* ---------------- Hero ---------------- */
+
+.hero {
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 160px 32px 80px;
+  position: relative;
+}
+
+.hero .eyebrow {
+  opacity: 0;
+  animation: fade-up 0.8s ease forwards 0.1s;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(3rem, 9vw, 6.5rem);
+  line-height: 1.02;
+  margin: 18px 0 22px;
+  color: var(--ink);
+  opacity: 0;
+  animation: fade-up 0.9s ease forwards 0.25s;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+.hero p {
+  max-width: 520px;
+  color: var(--ink-muted);
+  font-size: 17px;
+  margin: 0 0 34px;
+  opacity: 0;
+  animation: fade-up 0.9s ease forwards 0.4s;
+}
+
+.hero-rule {
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  margin: 0 0 34px;
+  animation: draw-rule 1.1s ease forwards 0.55s;
+}
+
+@keyframes draw-rule {
+  to {
+    width: 96px;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 36px;
+  border: 1px solid var(--gold);
+  color: var(--gold-light);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: background 0.25s ease, color 0.25s ease;
+  opacity: 0;
+  animation: fade-up 0.9s ease forwards 0.55s;
+}
+
+.btn:hover {
+  background: var(--gold);
+  color: var(--bg);
+}
+
+/* ---------------- Section scaffolding ---------------- */
+
+section {
+  padding: 120px 0;
+}
+
+.section-head {
+  margin-bottom: 64px;
+}
+
+.section-head h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  margin: 10px 0 0;
+}
+
+.section-head p {
+  color: var(--ink-muted);
+  max-width: 560px;
+  margin-top: 16px;
+}
+
+/* ---------------- About ---------------- */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.about-mark {
+  aspect-ratio: 4 / 5;
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, var(--bg-alt), var(--bg));
+}
+
+.about-mark span {
+  font-family: var(--font-display);
+  font-size: 7rem;
+  color: var(--gold);
+  opacity: 0.85;
+}
+
+.about-copy p {
+  color: var(--ink-muted);
+  font-size: 17px;
+  margin-bottom: 18px;
+}
+
+.about-copy p:first-child {
+  color: var(--ink);
+  font-size: 20px;
+  font-family: var(--font-display);
+  font-style: italic;
+}
+
+/* ---------------- Shop / Ledger ---------------- */
+
+.filter-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.filter-btn {
+  background: none;
+  border: 1px solid var(--line-strong);
+  color: var(--ink-muted);
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 9px 18px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  color: var(--gold-light);
+  border-color: var(--gold);
+}
+
+.filter-btn.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--bg);
+}
+
+.ledger {
+  border-top: 1px solid var(--line);
+}
+
+.ledger-row {
+  display: grid;
+  grid-template-columns: 64px 64px 1fr auto auto 28px;
+  align-items: center;
+  gap: 24px;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--line);
+  transition: background 0.25s ease, padding-left 0.25s ease;
+}
+
+.ledger-row:hover {
+  background: rgba(198, 161, 91, 0.05);
+  padding-left: 10px;
+}
+
+.ledger-index {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--gold);
+  font-size: 15px;
+}
+
+.ledger-thumb {
+  width: 64px;
+  height: 64px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.ledger-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ledger-thumb span {
+  font-family: var(--font-display);
+  color: var(--gold);
+  font-size: 22px;
+}
+
+.ledger-main h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 22px;
+  margin: 0 0 4px;
+}
+
+.ledger-main p {
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: 13px;
+}
+
+.ledger-category {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+.ledger-price {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--ink);
+  white-space: nowrap;
+  text-align: right;
+}
+
+.ledger-arrow {
+  color: var(--ink-muted);
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.ledger-row:hover .ledger-arrow {
+  transform: translateX(4px);
+  color: var(--gold-light);
+}
+
+.empty-note {
+  color: var(--ink-muted);
+  font-style: italic;
+  padding: 40px 0;
+}
+
+/* ---------------- Contact / Footer ---------------- */
+
+.contact {
+  text-align: center;
+}
+
+.contact h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  margin: 10px 0 20px;
+}
+
+.contact p {
+  color: var(--ink-muted);
+  max-width: 480px;
+  margin: 0 auto 34px;
+}
+
+.social-row {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.social-row a {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  border-bottom: 1px solid transparent;
+  padding-bottom: 3px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.social-row a:hover {
+  color: var(--gold-light);
+  border-color: var(--gold);
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 32px 0;
+  text-align: center;
+  color: var(--ink-muted);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+/* ---------------- Responsive ---------------- */
+
+@media (max-width: 860px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ledger-row {
+    grid-template-columns: 40px 48px 1fr auto;
+    row-gap: 6px;
+  }
+
+  .ledger-category,
+  .ledger-arrow {
+    display: none;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 76px;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-links.open {
+    max-height: 300px;
+  }
+
+  .nav-links li {
+    padding: 18px 32px;
+    border-top: 1px solid var(--line);
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

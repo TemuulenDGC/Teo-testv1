@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop &mdash; Your Brand Name</title>
+  <meta name="description" content="Shop all products from Your Brand Name.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav class="site-nav">
+    <div class="wrap">
+      <a href="index.html" class="brand-mark">Your<span>Brand</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="shop.html" class="active">Shop</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu">Menu</button>
+    </div>
+  </nav>
+
+  <header class="hero" style="min-height: 52vh; padding-top: 140px;">
+    <p class="eyebrow">The Full Collection</p>
+    <h1 style="font-size: clamp(2.6rem, 7vw, 4.5rem);">The <em>Shop</em></h1>
+    <div class="hero-rule"></div>
+    <p>Physical goods, digital work, and services — all in one place.</p>
+  </header>
+
+  <section style="padding-top: 0;">
+    <div class="wrap">
+      <div class="filter-row">
+        <button class="filter-btn active" data-filter="All">All</button>
+        <button class="filter-btn" data-filter="Physical">Physical</button>
+        <button class="filter-btn" data-filter="Digital">Digital</button>
+        <button class="filter-btn" data-filter="Service">Services</button>
+      </div>
+
+      <div class="ledger" id="shop-list">
+        <!-- Filled in automatically from js/products.js -->
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      &copy; <span id="year"></span> Your Brand Name. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
